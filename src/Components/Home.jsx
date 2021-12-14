@@ -1,0 +1,54 @@
+import React from 'react';
+import '../Styling/Home.css';
+import UserName from './UserName';
+import Clock from './Clock';
+import ToDoItems from './ToDos/ToDoItems';
+import MediaApps from './MediaApps';
+import { Link } from 'react-router-dom';
+import home from '../Media/home.png';
+
+// custom greeting for user based on time of day locally
+const welcome = '';
+const today = new Date();
+const hour = today.getHours();
+
+if (hour < 12) {
+    welcome = 'Good morning, ';
+} else if (hour < 17) {
+    welcome = 'Good afternoon, ';
+} else {
+    welcome = 'Good evening, ';
+}
+
+export default class Home extends React.Component {
+    render() {
+        return (
+            <div 
+                className="home-container">
+                <Link 
+                    to="/" 
+                    className="return-home">
+                    <img
+                        src={home}
+                        alt="Return to Home Page" />
+                </Link>
+                <h1 
+                    className="homeHeader">
+                    {welcome} {<UserName />}
+                </h1>
+                <div>
+                    <Clock />
+                </div>
+                <div> 
+                    <ToDoItems />
+                </div>
+                <div>
+                    <MediaApps />
+                </div>
+                <span className="footer">
+                 Ⓒ MOO Creative 2021 | All Rights Reserved
+                </span>
+            </div>
+        );
+    }
+}
