@@ -9,7 +9,7 @@ const Weather = () => {
         lon: '55.138100',
         lang: 'en',
         lang: 'en',
-        unit: 'metric', // values are (metric, standard, imperial)
+        unit: 'imperial', // values can be (metric, standard, imperial)
       });
 
       const customStyles = {
@@ -21,8 +21,8 @@ const Weather = () => {
         locationLetterSpacing: '0px',
         todayTempFontColor:  '#FFF',
         todayDateFontColor:  '#FFF',
-        todayRangeFontColor:  '##FFF',
-        todayDescFontColor:  '##FFF',
+        todayRangeFontColor:  '#FFF',
+        todayDescFontColor:  '#FFF',
         todayInfoFontColor:  '#FFF',
         todayIconColor:  '#FFF',
         forecastBackgroundColor:  '#FFF',
@@ -41,7 +41,7 @@ const Weather = () => {
         data={data}
         lang="en"
         locationLabel="Dubai"
-        unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
+        unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
         showForecast
       />
     );
