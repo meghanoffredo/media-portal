@@ -145,16 +145,18 @@
     filter: drop-shadow(5px 5px 10px #babaa9);
 }
 
+h2.header-0-2-3.rw-container-header { /* IMPORTANT: override set styling from widget to display weather header with same sizing as section headers */
+    letter-spacing: 1px; /* decrease letter spacing vs original */
+    font-size: 27px; /* original set in px, can't accept rem...1.7rem = 27px */
+    font-family: 'Fjalla One', sans-serif; 
+}
+
 .rw-today-date {
     display: none;
 }
 
 .rw-today {
     font-family: 'Open Sans', sans-serif; 
-}
-
-.rw-container-header {
-    font-family: 'Fjalla One', sans-serif; 
 }
 
 .rw-today-current {
@@ -266,7 +268,7 @@
 }
 
 .clear-button:hover, .clear-button:active {
-    color: #7EADB3;
+    color: #5278B3;
 }
 
 /* app libary */
