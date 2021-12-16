@@ -81,19 +81,19 @@ function Clock(){
         </div>
         <div className="timezone-container">
           <div className="localTime">
-            <p>{date.toLocaleTimeString("en-US", {timeZone: "Asia/Dubai", hour: '2-digit', minute: '2-digit'})}</p>
+            <p className="localTimeHoursMinutes">{date.toLocaleTimeString("en-US", {timeZone: "Asia/Dubai", hour: '2-digit', minute: '2-digit'})}</p>
             <p className="city">Dubai</p>
           </div>
           <div className="localTime">
-            <p>{date.toLocaleTimeString("en-US", {timeZone: "Europe/Paris", hour: '2-digit', minute: '2-digit'})}</p>
+            <p className="localTimeHoursMinutes">{date.toLocaleTimeString("en-US", {timeZone: "Europe/Paris", hour: '2-digit', minute: '2-digit'})}</p>
             <p className="city">Paris</p>
           </div>
           <div className="localTime">
-            <p>{date.toLocaleTimeString("en-US", {timeZone: "America/New_York", hour: '2-digit', minute: '2-digit'})}</p>
+            <p className="localTimeHoursMinutes">{date.toLocaleTimeString("en-US", {timeZone: "America/New_York", hour: '2-digit', minute: '2-digit'})}</p>
             <p className="city">New York</p>
           </div>
           <div className="localTime">
-            <p>{date.toLocaleTimeString("en-US", {timeZone: "Asia/Singapore", hour: '2-digit', minute: '2-digit'})}</p>
+            <p className="localTimeHoursMinutes">{date.toLocaleTimeString("en-US", {timeZone: "Asia/Singapore", hour: '2-digit', minute: '2-digit'})}</p>
             <p className="city"> Singapore</p>
           </div>
         </div>

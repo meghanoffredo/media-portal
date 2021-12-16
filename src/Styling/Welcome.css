@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: white;
 }
 
 video {
@@ -34,7 +35,7 @@ video {
     justify-content: center;
     font-family: 'Fjalla One', sans-serif;
     font-size: 5rem;
-    filter: drop-shadow(2px 2px 5px #1a346c);
+    filter: drop-shadow(2px 2px 5px black);
     margin-top: 0;
     margin-bottom: 30px;
 }
@@ -49,8 +50,9 @@ form {
 .nameLabel {
     font-size: 1.4rem;
     text-align: center;
-    font-weight: lighter;
+    font-weight: 700;
     line-height: 1.1;
+    color: black;
 }
 
 .userName {
@@ -60,8 +62,8 @@ form {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
-    color: #104250;
-    border-radius: 2px 2px 2px;
+    color: black;
+    border-radius: 4px;
 }
 
 .userName:focus, .userName:active {
@@ -74,8 +76,8 @@ form {
     font-size: 1.1rem;
     border-radius: 18px 18px;
     border: none;
-    filter: drop-shadow(2px 2px 5px #1a346c);
-    background-color: #1a346c;
+    filter: drop-shadow(2px 2px 5px black);
+    background-color: black;
     height: 35px;
     margin-top: 15px;
 }
@@ -86,5 +88,7 @@ form {
 }
 
 .submit:hover, .submit:active {
-    background-color: #0f1e3f;
+    opacity: .8;
+    color: white;
+    text-decoration: none;
 }

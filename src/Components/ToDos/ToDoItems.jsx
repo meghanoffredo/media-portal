@@ -4,19 +4,20 @@ import { v4 as uuidv4 } from 'uuid';
 import check from '../../Media/check-mark.png';
 import plus from '../../Media/plus.png';
 
-const LOCAL_STORAGE_KEY = 'toDoApp.toDos';
+const SESSION_STORAGE_KEY = 'toDoApp.toDos';
 
+// save user's to do's for current session only
 function ToDoItems() {
   const [todos, setToDos] = useState([])
   const toDoNameRef = useRef()
 
   useEffect(() => {
-    const storedToDos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    const storedToDos = JSON.parse(sessionStorage.getItem(SESSION_STORAGE_KEY))
     if (storedToDos) setToDos(storedToDos)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+    sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(todos))
   }, [todos])
 
   function toggleToDo(id) {
@@ -71,7 +72,8 @@ function ToDoItems() {
             className="to-dos">
             <ToDoList todos={todos} toggleToDo={toggleToDo}/>
           </div>
-          <div                  className="counter-clear-container">
+          <div                  
+            className="counter-clear-container">
             <div 
               className="counter"> 
               {todos.filter(todo => !todo.completed).length} Pending Task(s)

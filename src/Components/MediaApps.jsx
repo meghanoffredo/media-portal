@@ -54,7 +54,7 @@ export default class MediaApps extends React.Component {
                                 alt="New York Times" />
                             </a>
                             <figcaption>
-                                New York Times
+                                NY Times
                             </figcaption>
                         </figure>
                     </div>

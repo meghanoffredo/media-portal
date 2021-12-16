@@ -1,10 +1,14 @@
 import React from 'react';
 import '../Styling/Home.css';
+
 import UserName from './UserName';
 import Clock from './Clock';
 import ToDoItems from './ToDos/ToDoItems';
 import MediaApps from './MediaApps';
+import Weather from './Weather';
+
 import { Link } from 'react-router-dom';
+
 import home from '../Media/home.png';
 
 // custom greeting for user based on time of day locally
@@ -21,6 +25,7 @@ if (hour < 12) {
 }
 
 export default class Home extends React.Component {
+
     render() {
         return (
             <div 
@@ -39,6 +44,9 @@ export default class Home extends React.Component {
                 <div>
                     <Clock />
                 </div>
+                <div className="weather">
+                    <Weather />
+                </div>
                 <div> 
                     <ToDoItems />
                 </div>
@@ -46,7 +54,7 @@ export default class Home extends React.Component {
                     <MediaApps />
                 </div>
                 <span className="footer">
-                 Ⓒ MOO Creative 2021 | All Rights Reserved
+                 Ⓒ 2021 | All Rights Reserved
                 </span>
             </div>
         );

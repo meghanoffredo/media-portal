@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import '../Styling/Welcome.css';
-import cloudVideo from '../Media/cloudVideo.mp4'
+import geometricBackground2 from '../Media/geometricBackground2.mp4'
 import { Link } from 'react-router-dom';
 
 function Welcome(props) {
+
+  // save user name input to local storage to persist state to Home page
   const [name, setName] = useState(() => {
-    const saved = localStorage.getItem('name');
+    const saved = sessionStorage.getItem('name');
     const initialValue = JSON.parse(saved);
     return initialValue || '';
   });
 
   useEffect(() => {
-    localStorage.setItem('name', JSON.stringify(name));
+    sessionStorage.setItem('name', JSON.stringify(name));
   }, [name]);
 
   function handleChange(e) {
@@ -27,7 +29,7 @@ function Welcome(props) {
     return ( 
       <div className="welcome-container">
         <video className='videoTag' autoPlay loop muted>
-          <source src={cloudVideo} type='video/mp4' />
+          <source src={geometricBackground2} type='video/mp4' />
         </video>
         <div className="form-container">
           <h1 className="welcome">
