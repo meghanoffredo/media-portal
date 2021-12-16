@@ -7,13 +7,13 @@ function Welcome(props) {
 
   // save user name input to local storage to persist state to Home page
   const [name, setName] = useState(() => {
-    const saved = sessionStorage.getItem('name');
+    const saved = localStorage.getItem('name');
     const initialValue = JSON.parse(saved);
     return initialValue || '';
   });
 
   useEffect(() => {
-    sessionStorage.setItem('name', JSON.stringify(name));
+    localStorage.setItem('name', JSON.stringify(name));
   }, [name]);
 
   function handleChange(e) {
