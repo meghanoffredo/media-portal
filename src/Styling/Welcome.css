@@ -48,11 +48,12 @@ form {
 }
 
 .nameLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     font-weight: 700;
     line-height: 1.1;
     color: black;
+    filter: drop-shadow(1px 1px 2px #dddddd);
 }
 
 .userName {
@@ -87,8 +88,10 @@ form {
     color: white;
 }
 
-.submit:hover, .submit:active {
+.submit:hover, .submitText:hover, .submit:active, .submitText:active {
     opacity: .8;
-    color: white;
-    text-decoration: none;
+    color: white !important; /* keep button text white on hover/click vs blue */
+    cursor: grab;
 }
+
+
