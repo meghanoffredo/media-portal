@@ -8,7 +8,6 @@ const Weather = () => {
         lat: '25.114349',
         lon: '55.138100',
         lang: 'en',
-        lang: 'en',
         unit: 'imperial', // values can be (metric, standard, imperial)
       });
 
