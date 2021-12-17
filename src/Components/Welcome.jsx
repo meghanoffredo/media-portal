@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styling/Welcome.css';
+
 import geometricBackground2 from '../Media/geometricBackground2.mp4'
 import { Link } from 'react-router-dom';
 
@@ -7,13 +8,13 @@ function Welcome(props) {
 
   // save user name input to local storage to persist state to Home page
   const [name, setName] = useState(() => {
-    const saved = localStorage.getItem("name");
+    const saved = localStorage.getItem('name');
     const initialValue = JSON.parse(saved);
-    return initialValue || "";
+    return initialValue || '';
   });
 
   useEffect(() => {
-    localStorage.setItem("name", JSON.stringify(name));
+    localStorage.setItem('name', JSON.stringify(name));
   }, [name]);
 
   function handleChange(e) {
@@ -23,7 +24,12 @@ function Welcome(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.addName(name);
-    setName("");
+    setName('');
+  }
+
+  function handleClear() {
+    localStorage.removeItem('name');
+    setName('');
   }
 
     return ( 
@@ -58,6 +64,11 @@ function Welcome(props) {
                 Submit
               </Link>
            </button>
+          <button
+            className="reset"
+            onClick={handleClear}>
+            Reset
+          </button>
           </form>
         </div>
       </div>
