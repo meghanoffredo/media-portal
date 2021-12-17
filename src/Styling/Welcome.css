@@ -17,7 +17,6 @@ video {
     position: fixed;
     top: 0;
     left: 0;
-    opacity: .9;
 }
 
 .form-container {
@@ -81,6 +80,18 @@ form {
     background-color: black;
     height: 35px;
     margin-top: 15px;
+    cursor: pointer;
+}
+
+.reset {
+    border: none;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    margin: 5px;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 2px #dddddd);
 }
 
 .submitText {
@@ -91,7 +102,12 @@ form {
 .submit:hover, .submitText:hover, .submit:active, .submitText:active {
     opacity: .8;
     color: white !important; /* keep button text white on hover/click vs blue */
-    cursor: grab;
+    cursor: pointer;
+}
+
+.reset:hover, .reset:active {
+    opacity: .8;
+    cursor: pointer;
 }
 
 
