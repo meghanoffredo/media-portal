@@ -268,7 +268,7 @@ h2.header-0-2-3.rw-container-header { /* IMPORTANT: override set styling from wi
 }
 
 .clear-button:hover, .clear-button:active {
-    color: #5278B3;
+    color: black;
 }
 
 /* app libary */
@@ -384,6 +384,12 @@ figcaption {
     /* remove 4 day additional forecast from weather component */
     .rw-forecast-day {
         display: none;
+    }
+
+    /* decrease size of right sidebar forecast image in weather component */
+    .rw-container-right svg {
+        height: 95px;
+        width: 95px;
     }
 
         /* decrease size of app container & icons */
