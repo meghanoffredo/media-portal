@@ -1,12 +1,12 @@
 import React from 'react';
 
 // remove double & single quotes from string
-const getName = localStorage.getItem('name');
-const withoutQuotes = getName.replace(/['"]+/g, '');
-export default class UserName extends React.Component {
+const UserName = () => {
 
-    render() {
+    const getName = localStorage.getItem('name');
+    const withoutQuotes = getName.replace(/['"]+/g, '');
 
-        return withoutQuotes;
-    }
+    return withoutQuotes;
 }
+
+export default UserName;
