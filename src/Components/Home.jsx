@@ -5,6 +5,7 @@ import UserName from './UserName';
 import Clock from './Clock';
 import ToDoItems from './ToDos/ToDoItems';
 import MediaApps from './MediaApps';
+import Podcasts from './Podcasts';
 import Weather from './Weather';
 
 import { Link } from 'react-router-dom';
@@ -53,8 +54,11 @@ export default class Home extends React.Component {
                 <div>
                     <MediaApps />
                 </div>
+                <div>
+                    <Podcasts />
+                </div>
                 <span className="footer">
-                 Ⓒ 2021 | All Rights Reserved
+                 Ⓒ MOO Creative 2022 | All Rights Reserved
                 </span>
             </div>
         );
