@@ -1,49 +1,80 @@
-import React from 'react';
-import ReactWeather, { useOpenWeather } from 'react-open-weather';
+import React, { useState } from 'react';
+import clouds from '../Media/clouds.png';
 
-const Weather = () => {
-    const { data, isLoading, errorMessage } = useOpenWeather({
-        key: '3be4a59490bd19b22f63c9eb0f02c5d8',
-        type: 'auto',
-        lat: '25.114349',
-        lon: '55.138100',
-        lang: 'en',
-        unit: 'imperial', // values can be (metric, standard, imperial)
+// OpenWeatherMap API key & site link
+const api = {
+  key: "3be4a59490bd19b22f63c9eb0f02c5d8",
+  base: "https://api.openweathermap.org/data/2.5/"
+}
+
+function Weather () {
+
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
+
+  // Search bar functionality to pull city weather data (metric) based in search query
+  const search = evt => {
+    if (evt.key === "Enter") {
+      fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setQuery('');
       });
-
-      const customStyles = {
-        fontFamily: 'Fjalla One, sans-serif',
-        gradientStart:  '#6b8abd',
-        gradientMid:  '#6081b8',
-        gradientEnd:  '#415F91',
-        locationFontColor:  '#FFF',
-        locationLetterSpacing: '0px',
-        todayTempFontColor:  '#FFF',
-        todayDateFontColor:  '#FFF',
-        todayRangeFontColor:  '#FFF',
-        todayDescFontColor:  '#FFF',
-        todayInfoFontColor:  '#FFF',
-        todayIconColor:  '#FFF',
-        forecastBackgroundColor:  '#FFF',
-        forecastSeparatorColor:  '#DDD',
-        forecastDateColor:  '#96967d',
-        forecastDescColor:  '#96967d',
-        forecastRangeColor:  '#96967d',
-        forecastIconColor:  '#5377B2',
-    };
-
-    return (
-      <ReactWeather
-        theme={customStyles}
-        isLoading={isLoading}
-        errorMessage={errorMessage}
-        data={data}
-        lang="en"
-        locationLabel="Dubai"
-        unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
-        showForecast
-      />
-    );
+    }
   }
 
-  export default Weather;
+
+  return (
+    <div className="weather-container">
+      <div className="section-title">
+            <img
+            src={clouds}
+            alt="Weather Icon" />
+                <h1>
+                  My Weather
+                </h1>
+      </div>
+      <div className="searched-weather-container">
+      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 15) ? 'Warm' : 'Default') : 'Default'}>
+        <main>
+          <div className="search-box">
+            <input 
+              type="text"
+              className="search-bar"
+              placeholder="Search any city or town..."
+              onChange={e => setQuery(e.target.value)}
+              value={query}
+              onKeyPress={search}
+            />
+          </div>
+          {(typeof weather.main != "undefined") ? (
+          <div>
+            <div 
+            className="location-box">
+              <div 
+              className="location">
+                {weather.name}, {weather.sys.country}
+              </div>
+            </div>
+            <div 
+            className="weather-box">
+              <div 
+              className="temp">
+                {Math.round(weather.main.temp)}°c
+              </div>
+              <div 
+              className="current-weather">
+                {weather.weather[0].main}
+              </div>
+            </div>
+          </div>
+          ) : ('')}
+        </main>
+      </div>
+      </div>
+    </div>
+  );
+}
+
+export default Weather;
