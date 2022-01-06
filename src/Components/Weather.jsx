@@ -36,7 +36,7 @@ function Weather () {
                 </h1>
       </div>
       <div className="searched-weather-container">
-      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 15) ? 'Warm' : 'Default') : 'Default'}>
+      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 15) ? 'Warm' : 'Cool') : 'Default'}>
         <main>
           <div className="search-box">
             <input 
